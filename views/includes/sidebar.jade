@@ -1,0 +1,36 @@
+mixin sideMenu(items,ind)
+	nav.navbar-default.navbar-static-side(role='navigation')
+		.sidebar-collapse
+			ul.nav.metismenu#side-menu
+				li.nav-header
+					.dropdown.profile-element
+						span
+							img(alt='image', class='img-circle', src='img/profile_small.jpg')
+						a.dropdown-toggle(data-toggle='dropdown', href='#')
+							span.clear
+								span.block.m-t-xs
+									strong.font-bold Nickchu
+								span.text-muted.text-xs.block Constructor
+									b.caret
+						ul.dropdown-menu.animated.fadeInRight.m-t-xs
+							li
+								a(href='profile') 个人主页
+							li
+								a(href='contacts') 通讯录
+							li
+								a(href='email') 电子邮件
+							li.divider
+							li
+								a(href='#') 退出
+					.logo-element N+
+				each item, index in items
+					if(index == ind)
+						li.active
+							a(href= item.href)
+								i(class= item.icon)
+								span.nav-label=item.name
+					else
+						li
+							a(href= item.href)
+								i(class= item.icon)
+								span.nav-label=item.name

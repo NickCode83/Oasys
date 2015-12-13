@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	#wrapper
+		include ../includes/sidebar
+		- var list = [{name:'工作桌面',href:'index',icon:'fa fa-desktop'},{name:'电子邮件',href:'email', icon:'fa fa-envelope'},{name:'个人主页',href:'profile',icon:'fa fa-street-view'},{name:'质量数据',href:'quality',icon:'fa fa-line-chart'},{name:'工作项目',href:'projects',icon:'fa fa-tasks'},{name:'通讯录',href:'contacts',icon:'fa fa-phone'},{name:'网络硬盘',href:'cloud',icon:'fa fa-upload'}]
+		- var activeMenu
+		+sideMenu(list, activeMenu || 2)
+		#page-wrapper.gray-bg.dashboard-1
+			include ../includes/top
+			.row.border-bottom.white-bg.dashboard-header
+
+			include ../includes/footer
+	include ../includes/jlib
