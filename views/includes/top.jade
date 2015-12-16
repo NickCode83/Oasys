@@ -85,8 +85,74 @@
 									|读取所有通知
 								i.fa.fa-angle-right
 			li
+				a(href='#', data-toggle='modal', data-target='#signinModal')
+					i.fa.fa-user 登陆
+			li
 				a(href='#', data-toggle='modal',data-target='#signupModal')
-					i.fa.fa-sign-out Log out
+					i.fa.fa-user-plus 注册
 			li
 				a.right-sidebar-toggle
 					i.fa.fa-tasks
+#signinModal.modal.inmodal(tabindex='-1',role='dialog',aria-hidden='true')
+	.modal-dialog
+		.modal-content.animated.bounceInRight
+			form(method='POST', action='/user/signup')
+				.modal-header
+					button.close(type='button', data-dismiss='modal')
+						span(aria-hidden='true')
+							|&times;
+						span.sr-only
+							|关闭
+					i.fa.fa-user.modal-icon
+					h4.modal-title
+						|用户登陆
+					small.font-bold
+						|在这里输入用户名和密码，来实现用户的登陆。
+				.modal-body
+					p
+						strong
+							|Oasys自动化办公系统
+						|是一种全新的办公自动化（OA）系统，希望你能喜欢并能帮助你提高自己的办公效率！
+					.form-group
+						label(for='signupName')
+							|用户名
+						input#signupName.form-control(type='text',placeholder='请输入你的用户名',name='user[name]')
+						label(for='signupPassword')
+							|密码
+						input#signupPassword.form-control(type='password',placeholder='请输入密码',name='user[password]')
+				.modal-footer
+					button.btn.btn-white(type='button',data-dismiss='modal')
+						|关闭
+					button.btn.btn-primary(type='submit')
+						|登陆
+#signupModal.modal.inmodal(tabindex='-1',role='dialog',aria-hidden='true')
+	.modal-dialog
+		.modal-content.animated.flipInY
+			.modal-header
+				button.close(type='button', data-dismiss='modal')
+					span(aria-hidden='true')
+						|&times;
+					span.sr-only
+						|关闭
+				i.fa.fa-user-plus.modal-icon
+				h4.modal-title
+					|用户注册
+				small.font-bold
+					|在这里输入用户名和密码，来创建新的用户。
+			.modal-body
+				p
+					strong
+						|Oasys自动化办公系统
+					|是一种全新的办公自动化（OA）系统，希望你能喜欢并能帮助你提高自己的办公效率！
+				.form-group
+					label
+						|用户名
+					input.form-control(type='text',placeholder='请输入你的用户名')
+					label
+						|密码
+					input.form-control(type='password',placeholder='请输入密码')
+			.modal-footer
+				button.btn.btn-white(type='button',data-dismiss='modal')
+					|关闭
+				button.btn.btn-primary(type='button')
+					|注册
