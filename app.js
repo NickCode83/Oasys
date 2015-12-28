@@ -29,7 +29,7 @@ app.get('/index', function(req, res){
 
 app.get('/profile', function(req, res){
 	res.render('profile',{
-		title:'Oasys系统-个人主页123'
+		title:'Oasys系统-个人主页'
 	});
 });
 
@@ -63,6 +63,12 @@ app.get('/cloud', function(req, res){
 	});
 });
 
+app.get('/table', function(req, res){
+	res.render('table',{
+		title:'Oasys系统-表格数据'
+	});
+});
+
 //list page
 app.get('/admin/userlist',function(req,res){
 	
@@ -72,7 +78,7 @@ app.get('/admin/userlist',function(req,res){
 		}
 
 		res.render('userlist',{
-			title:'imooc 用户列表页',
+			title:'imooc 用户列表页1',
 			users:users
 
 		});
