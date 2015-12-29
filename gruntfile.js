@@ -3,9 +3,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
             jade: {
-                files: ['views/**'],
+                files: ['views/**'],//监听的文件位置
                 options: {
-                    livereload: true
+                    //代码发生变化时重启服务
+                    livereload: true  
                 }
             },
             js: {
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
             }
         },
 
-        nodemon: {
+       nodemon: {
             dev: {
                 script: 'app.js',
                 options:{
@@ -29,14 +30,14 @@ module.exports = function(grunt) {
 
         },
 
-
         concurrent: {
+            //同时执行这两个任务
             tasks: ['nodemon', 'watch'],
             options: {
                 logConcurrentOutput: true
             }
         }
-    });
+    })
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-nodemon');

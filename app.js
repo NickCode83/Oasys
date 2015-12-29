@@ -41,7 +41,7 @@ app.get('/email', function(req, res){
 
 app.get('/projects', function(req, res){
 	res.render('projects',{
-		title:'Oasys系统-工作项目'
+		title:'Oasys系统-工作项目123'
 	});
 });
 
@@ -65,7 +65,7 @@ app.get('/cloud', function(req, res){
 
 app.get('/table', function(req, res){
 	res.render('table',{
-		title:'Oasys系统-表格数据'
+		title:'Oasys系统-表格数据123'
 	});
 });
 
