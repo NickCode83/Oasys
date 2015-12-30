@@ -29,7 +29,7 @@ app.get('/index', function(req, res){
 
 app.get('/profile', function(req, res){
 	res.render('profile',{
-		title:'Oasys系统-个人主页'
+		title:'Oasys系统-个人主页123'
 	});
 });
 
